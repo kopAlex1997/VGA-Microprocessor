@@ -1,0 +1,17 @@
+A0 // X limit
+F0 // 2*120
+00 // X curr
+00 // Y curr
+00 // Zero
+34 // Hor 1
+6A // Hor 2
+4E // Vert 1
+9C // Vert 2
+00 // empty
+00 // current number of interrupts received
+0A // number of interrupts received to make a 1 second interval
+01 // 1 sec over
+44
+46
+00
+00
