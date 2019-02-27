@@ -35,7 +35,7 @@
     
     // Load program
     initial 
-        $readmemh("/home/s1550706/Documents/dsl4/line_pattern_gen5.txt", ROM);     
+        $readmemh("../additional_sources/rom.txt", ROM);     
         
     //single port ram
     always@(posedge CLK) 
