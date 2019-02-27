@@ -18,6 +18,6 @@ The aim of the project is to implement full VGA control functionanlity on an FPG
 
 **Architecture**
 
-![alt text](https://github.com/vladrumyan/master/VGA-Microprocessor/additional_sources/to/uproc.PNG)
+![alt text](https://github.com/vladrumyan/VGA-Microprocessor/blob/master/additional_sources/uproc.PNG)
 
 Credits: University of Edinburgh
