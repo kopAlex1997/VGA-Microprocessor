@@ -46,7 +46,7 @@
     reg [7:0] Mem [2**RAMAddrWidth-1:0];
     
     // Initialise the memory for data preloading, initialising variables, and declaring constants 
-    initial $readmemh("/home/s1550706/Documents/dsl4/full_ram.txt", Mem);
+        initial $readmemh("../additional_sources/full_ram.txt", Mem);
     
     //single port ram
     always@(posedge CLK) 
