@@ -1,0 +1,256 @@
+09 // func start OUTER LOOP
+02 
+00 // write to A from RAM[3]
+03
+01 // write to B from RAM[1]
+01
+96 // beq a == 240
+3F // JUMP FROM HERE WHEN LOOP DONE CHANGABLE
+00 // write to A from RAM[2] INNER LOOP START
+02
+01 // write to B from RAM[0] to set X limit
+00 
+96 // beq a == 160
+31 // go to vertical loop ending CHANGABLE
+02 // vga b1 = A
+B1 
+01 // write curr Y to B
+03 // RAM[3]
+00 // write vert line coord 1 to A
+07 // RAM[7]
+96 // check if Y coord == 1st vertical line coord
+64 // if yes - JUMP, else keep going CHANGABLE
+00 // load Vert2 to A
+08 // RAM[8]
+96 // if Y == Vert 2 -- JUMP CHANGABLE
+6A
+01 // write RAM[5] to B
+05 // gets first hor line coord
+00 // get curr X coord
+02 // RAM[2]
+96 // compares curr X with Hor 1 INSERT CONDITIONS FOR LINES HERE
+56 // go to some line if correct, else go to next CHANGABLE
+01 // write RAM[6] to B
+06 // gets second hor line coord
+96 // compares with 106
+5D // CHANGABLEEEEEEEEEEEEEEEEEEEEEEEE
+01 // restore current y coord
+03 // B = RAM[3]
+03 // write B to B0
+B0
+00 // A = RAM[2] return current X coordinate back
+02
+01 // Set B as X limit again
+00
+54 // A = A + 1 increment X position
+02 // put current X position back in memory
+02
+07 // go to start of X loop
+0C //              CHANGABLE
+01 // B = 0  FINISH OF VERTICAL LOOP
+04
+03 // RAM[2] = 0 reset X
+02
+00 // write to A from RAM[3]
+03
+54 // A = A + 1
+54 // Incrment y twice as LSB is ignored
+02 // write A to RAM[3]
+03 // current Y position
+0A // return  
+00 
+00 
+00
+00 // JUMP HERE WHEN OUTER LOOP DONE
+04 // RESET A to 0
+02 // write ram 3 to A
+03
+07 // GO TO IDLE
+70
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+01 // JUMP HERE IF X curr == 54
+03 // write Y curr to reg B 
+65 // increment B by 1 to set data to 1
+03 // write value of reg B to B0
+B0
+07
+28 // jump back to x loop   CHANGABLE!!!!!!!!!!!!!!!
+01 // JUMP HERE IF X curr == 106
+03 // write Y curr to reg B 
+65 // increment B by 1 to set data to 1
+03 // write value of reg B to B0
+B0
+07
+28 // jump back to x loop   CHANGABLE!!!!!!!!!!!!!!!
+65 // increment B by 1 to set data to 1 JUMP here if Y coord = Vert1
+03 // write value of reg B to B0
+B0
+85 // decrement B by 1
+07
+28 // jump back to x loop   CHANGABLE!!!!!!!!!!!!!!!
+65 // increment B by 1 to set data to 1 JUMP here if Y coord = Vert2
+03 // write value of reg B to B0
+B0
+85
+07
+28 // jump back to x loop   CHANGABLE!!!!!!!!!!!!!!!
+00
+0F
+01
+10
+02 
+B1
+03
+B0
+00 // reg A = RAM[13]
+0D
+01 // reg B = RAM[14]
+0E
+02 // RAM[15] = A
+0F 
+03 // RAM[16] = B
+10
+02 // set X_ADDR = A
+B1
+65 // B = B + 1
+03
+B0
+65 // B = B + 1
+03 // RAM[15] = B + 2
+0E
+08
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+00
+70
